@@ -1,0 +1,66 @@
+.burger {
+
+	@include wh (40px);
+	padding: 14px 11px;
+	display: block;
+	border: none;
+	cursor: pointer;
+	position: relative;
+	z-index: 15;
+
+
+	background-color: #53CD8B;
+	border-radius: 50%;
+
+	@include media (min, xl) {
+		display: none;
+	}
+
+	&__inner {
+		position: relative;
+		width: 100%;
+		height: 100%;
+		@include flex (center, center);
+
+		span,
+		&::before,
+		&::after {
+			content: "";
+			transition: all 0.3s ease 0s;
+			left: 0px;
+			position: absolute;
+			width: 18px;
+			height: 1px;
+			background-color: #fff;
+
+		}
+
+		&::before {
+			top: 0px;
+		}
+
+		&::after {
+			bottom: 0px;
+		}
+
+		span {
+			top: calc(50% - 1px);
+		}
+
+		.open & {
+			span {
+				transform: scale(0);
+			}
+
+			&::before {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+
+			&::after {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+}
