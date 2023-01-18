@@ -47,7 +47,7 @@ function initSliders() {
 	bildSliders();
 
 	// Перечень слайдеров
-	if (document.querySelector('.swiper')) {
+	if (document.querySelector('.opportunitiesSwiper')) {
 		new Swiper('.swiper', {
 			modules: [Navigation],
 			navigation: {

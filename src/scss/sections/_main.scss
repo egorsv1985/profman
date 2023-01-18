@@ -1,0 +1,201 @@
+.hero {
+  position: relative;
+
+  // min-width: 1400px;
+  @include media(min, 1440px) {
+    min-width: 100%;
+  }
+
+  .container {
+    padding: 0 10px;
+    margin-top: 10px;
+
+    @include media(min, xl) {
+      max-width: 1400px;
+      padding: 0 20px;
+      margin-top: 40px;
+    }
+  }
+  .header {
+    width: unset;
+  }
+
+  // .hero__wrapper
+  &__wrapper {
+    @include flex($flex-direction: column-reverse);
+    background-color: #fff;
+
+    border-radius: 30px;
+    padding: 40px 0 30px;
+
+    @include media(min, xl) {
+      flex-direction: row;
+      gap: 26px;
+      padding: 115px 0 96px 100px;
+    }
+  }
+
+  // .hero__content
+  &__content {
+    @include flex(center, center, $flex-direction: column);
+    padding-top: 225px;
+
+    @include media(min, sm) {
+      max-width: 50%;
+
+      padding-top: 30px;
+    }
+
+    @include media(min, sm) {
+      max-width: 50%;
+
+      padding-top: 90px;
+    }
+
+    @include media(min, xl) {
+      @include flex(flex-start, flex-start);
+
+      padding-top: 110px;
+    }
+  }
+
+  // .hero__title
+  &__title {
+    margin-bottom: 20px;
+
+    @include media(min, xl) {
+      max-width: 500px;
+      margin-bottom: 40px;
+      text-align: left;
+    }
+  }
+
+  // .hero__text
+  &__text {
+    margin-bottom: 20px;
+
+    @include media(min, xl) {
+      max-width: 500px;
+      text-align: left;
+      margin-bottom: 80px;
+
+      br {
+        display: none;
+      }
+    }
+  }
+
+  // .hero__buttons
+  &__buttons {
+    @include flex(center, center, $flex-direction: column);
+    gap: 10px;
+
+    @include media(min, xl) {
+      flex-direction: row;
+      gap: 20px;
+    }
+  }
+
+  // .hero__block-img
+  &__block-img {
+    position: absolute;
+    right: 0;
+    top: 42px;
+
+    @include media(min, sm) {
+      right: 10px;
+      top: 75px;
+    }
+
+    @include media(min, md) {
+      right: 90px;
+    }
+
+    @include media(min, lg) {
+      right: 175px;
+      top: 110px;
+    }
+
+    @include media(min, xl) {
+      right: 35%;
+    }
+
+    @include media(min, 1500px) {
+      position: relative;
+      right: unset;
+      top: unset;
+    }
+  }
+
+  // .hero__img
+  &__img {
+    @include media(min, sm) {
+      height: 100%;
+      width: 103%;
+    }
+
+    @include media(min, md) {
+      width: 130%;
+    }
+
+    @include media(min, lg) {
+      width: 160%;
+    }
+
+    @include media(min, xl) {
+      height: 100%;
+      width: 280%;
+      max-width: 786px;
+      max-height: 540px;
+    }
+  }
+}
+.main {
+  // .main__content
+  &__content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    @include flex($flex-direction: column);
+
+    padding: 360px 50px 280px 140px;
+
+    background-color: #f1f1f1;
+  }
+  // .main__title
+  &__title {
+    max-width: 746px;
+	margin-bottom: 25px;
+  }
+  // .main__text
+  &__text {
+	margin-bottom: 35px;
+  }
+  // .main__buttons
+  &__buttons {
+    @include flex();
+    gap: 28px;
+  }
+  // .main__btn
+  &__btn {
+  }
+  // .main__block-img
+  &__block-img {
+    position: relative;
+  }
+  // .main__img
+  &__img {
+  }
+}
+.container {
+}
+.title {
+}
+.text {
+}
+.btn {
+}
+.btn-primary {
+}
+.btn-secondary {
+}

@@ -1,82 +1,35 @@
 .btn {
-	@include flex (center, center);
-	width: 240px;
-	height: 40px;
+  @include flex(center, center);
 
+  border-radius: 5px;
 
-	border-radius: 50px;
-	font-family: 'OnestMedium';
+  height: 43px;
+  font-family: "cantarell";
 
-	font-weight: 500;
-	font-size: 12px;
-	line-height: 15px;
-
-	border: none;
-
-	@include media (min, lg) {
-
-		width: 231px;
-		height: 60px;
-
-		font-size: 16px;
-		line-height: 20px;
-
-
-	}
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 26px;
+  color: #000;
+  border: none;
 }
 
 .btn-primary {
+  background-color: #afc7fa;
+  width: 275px;
 
-	background-color: #53CD8B;
-
-
-	color: #FFFFFF;
-
-
-	&:hover {
-		border: 2px solid #53CD8B;
-		color: #53CD8B;
-		background-color: transparent;
-	}
-
+  &:hover {
+    background-color: #8faff7;
+  }
 }
 
 .btn-secondary {
+  width: 100px;
 
-	border: 2px solid #53CD8B;
-	color: #53CD8B;
-	background-color: transparent;
+  background-color: #fff;
+  border: 1px solid #030e27;
 
-	&:hover {
-
-		background-color: #53CD8B;
-
-
-		color: #FFFFFF;
-
-	}
+  &:hover {
+    background-color: #8faff7;
+  }
 }
 
-.consultations__btn-primary {
-	border: 2px solid #0F2F2E;
-	color: #0F2F2E;
-	background-color: transparent;
-
-	&:hover {
-		color: $accentColor;
-		background-color: #0F2F2E;
-		border: none;
-	}
-
-}
-
-.consultations__btn-secondary {
-	color: $accentColor;
-	background-color: #0F2F2E;
-	border: none;
-
-	&:hover {
-		border: 2px solid #0F2F2E;
-		color: #0F2F2E;
-	}
-}

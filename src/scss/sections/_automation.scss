@@ -1,0 +1,51 @@
+.automation {
+  position: relative;
+  top: -95px;
+  background-color: #cfe1bd;
+  border-radius: 80px 80px 0px 0px;
+ padding: 70px 0 626px;
+
+  // .automation__wrapper
+  &__wrapper {
+	@include flex(center);
+	
+    
+  }
+  // .automation__content
+  &__content {
+    @include flex(space-between);
+	gap: 180px;
+  }
+  // .automation__title
+  &__title {
+    max-width: 660px;
+    font-size: 58px;
+    line-height: 70px;
+  }
+  // .automation__text
+  &__text {
+    max-width: 520px;
+    font-size: 22px;
+    line-height: 31px;
+  }
+  // .automation__box-form
+  &__box-form {
+    position: absolute;
+    left: 50%;
+    bottom: 80px;
+	transform: translateX(-50%);
+	width: 100%;
+    max-width: 1360px;
+    max-height: 535px;
+	padding: 70px 140px 20px 100px;
+
+    background-color: #f1f1f1;
+    border-radius: 60px;
+
+	z-index: 1;
+	
+  }
+  .form__btn{
+	width: 208px;
+  }
+}

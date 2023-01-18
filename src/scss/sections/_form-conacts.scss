@@ -1,0 +1,21 @@
+.form-contacts {
+	
+  // .form-contacts__wrapper
+  &__wrapper {
+    @include flex();
+    gap: 40px;
+  }
+  // .form-contacts__content
+  &__content {
+    border-right: 1px solid #030e27;
+	padding-right: 30px;
+
+  }
+  // .form-contacts__text
+  &__text {
+    max-width: 420px;
+  }
+  // .form-contacts__form
+  &__form {
+  }
+}

@@ -13,21 +13,21 @@
 @import "fonts/icons";
 
 // Шрифт по умолчанию ==============================================================================================================================================================================================================================================================================
-$fontFamily: "OnestRegular";
+$fontFamily: "Bogart-Medium";
 $fontSize: rem(14); // где 14(px) - размер шрифта по умолчанию из макета
 
 // Основные цвета
-$mainColor: #4E4E4E; // Цвет шрифта по умолчанию
+$mainColor: #030e27; // Цвет шрифта по умолчанию
 
-$accentColor: #72FF88;
+$accentColor: #fff;
 
 // НАСТРОЙКИ ===============================================================================================================================================================================================================================================================================================
 // Минимальная ширина страницы
 $minWidth: 320;
 // Ширина полотна (макета)
-$maxWidth: 1440;
+$maxWidth: 1920;
 // Ширина ограничивающего контейнера (0 = нет ограничения)
-$maxWidthContainer: 1190;
+$maxWidthContainer: 1610;
 // Общий отступ у контейнера
 // (30 = по 15px слева и справа, 0 = нет отступа)
 $containerPadding: 30;
@@ -38,51 +38,54 @@ $containerPadding: 30;
 $responsiveType: 1;
 
 // Ширина страбатывания первого брейкпоинта
-$containerWidth: $maxWidthContainer+$containerPadding;
+$containerWidth: $maxWidthContainer + $containerPadding;
 
 // Брейк-поинты
-$pc: em($containerWidth); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
+$pc: em(
+  $containerWidth
+); // ПК, ноутбуки, некоторые планшеты в горизонтальном положении
 $tablet: em(991.98); // Планшеты, некоторые телефоны в горизонтальном положении
 $mobile: em(767.98); // Телефоны L
 $mobileSmall: em(479.98); // Телефоны S
-$grid_breakpoints: (xxl: 1439px,
-	xl: 1279px,
-	lg: 1023px,
-	md: 767px,
-	sm: 575px,
+$grid_breakpoints: (
+  xxl: 1439px,
+  xl: 1279px,
+  lg: 1023px,
+  md: 767px,
+  sm: 575px,
 );
 
 // Обнуление и общие параметры ============================================================================================================================================================================================== =============================================================================================== ===============================================================================================
 @import "base/null";
 
 body {
+  // Скролл заблокирован
+  .lock & {
+    overflow: hidden;
+    touch-action: none;
+  }
 
-	// Скролл заблокирован
-	.lock & {
-		overflow: hidden;
-		touch-action: none;
-	}
-
-	// Сайт загружен
-	.loaded & {}
+  // Сайт загружен
+  .loaded & {
+  }
 }
 
 // Оболочка ============================================================================================================================================================================================================================================================================================================================================================================================================================================
 .wrapper {
-	min-height: 100%;
-	display: flex;
-	flex-direction: column;
-	overflow: hidden;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
 
-	// Прижимаем footer
-	>main {
-		flex: 1 1 auto;
-	}
+  // Прижимаем footer
+  > main {
+    flex: 1 1 auto;
+  }
 
-	// Фикс для слайдеров
-	>* {
-		min-width: 0;
-	}
+  // Фикс для слайдеров
+  > * {
+    min-width: 0;
+  }
 }
 
 // Ограничивающий контейнер ======================================================================================================================================================================================================================
@@ -94,54 +97,48 @@ body {
 Снипет (HTML): cnt
 */
 @if ($responsiveType==1) {
+  // Отзывчивая
+  [class*="__container"] {
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+      margin: 0 auto;
+    }
 
-	// Отзывчивая
-	[class*="__container"] {
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-			margin: 0 auto;
-		}
+    @if ($containerPadding>0) {
+      padding: 0 rem(math.div($containerPadding, 2));
+    }
+  }
+} @else {
+  // По брейк-поинтам
+  [class*="__container"] {
+    margin: 0 auto;
 
-		@if ($containerPadding>0) {
-			padding: 0 rem(math.div($containerPadding, 2));
-		}
-	}
-}
+    @if ($maxWidthContainer>0) {
+      max-width: rem($maxWidthContainer);
+      box-sizing: content-box;
+    } @else {
+      @if ($containerPadding>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
 
-@else {
+    @media (max-width: $pc) {
+      max-width: rem(970);
+    }
 
-	// По брейк-поинтам
-	[class*="__container"] {
-		margin: 0 auto;
+    @media (max-width: $tablet) {
+      max-width: rem(750);
+    }
 
-		@if ($maxWidthContainer>0) {
-			max-width: rem($maxWidthContainer);
-			box-sizing: content-box;
-		}
+    @media (max-width: $mobile) {
+      max-width: none;
 
-		@else {
-			@if ($containerPadding>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-
-		@media (max-width: $pc) {
-			max-width: rem(970);
-		}
-
-		@media (max-width: $tablet) {
-			max-width: rem(750);
-		}
-
-		@media (max-width: $mobile) {
-			max-width: none;
-
-			@if ($containerPadding>0 and $maxWidthContainer>0) {
-				padding: 0 rem(math.div($containerPadding, 2));
-			}
-		}
-	}
+      @if ($containerPadding>0 and $maxWidthContainer>0) {
+        padding: 0 rem(math.div($containerPadding, 2));
+      }
+    }
+  }
 }
 
 // Подключение стилей общих элементов проекта
@@ -153,39 +150,19 @@ body {
 // components
 
 @import "./components/btn";
-@import "./components/burger";
+
 @import "./components/swiper";
-@import "./components/social";
-@import "./components/breadcrumb";
-@import "./components/scroll-header";
-
-
 
 // sections
 
-@import "./sections/hero";
-@import "./sections/services";
-@import "./sections/about";
-@import "./sections/consultations";
-@import "./sections/doctors";
-@import "./sections/reviews";
-@import "./sections/forms";
-@import "./sections/contacts";
-@import "./sections/card";
-
-
-@import "./components/popup";
+@import "./sections/main";
+@import "./sections/automation";
+@import "./sections/form-conacts";
+@import "./sections/solutions";
+@import "./sections/opportunities";
 
 // block
 @import "header";
 @import "footer";
 @import "./blocks/nav";
-@import "./blocks/logo";
-@import "./blocks/open-burger";
-@import "./blocks/services-accordeon";
-@import "./blocks/doctors-slide";
 @import "./blocks/form";
-
-// Подключение стилей отдельных страниц
-@import "home";
-@import "doctors";

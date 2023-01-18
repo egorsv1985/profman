@@ -2,11 +2,10 @@
 
 	// .logo__img
 	&__img {
-		width: 40px;
+		width: 103px;
+		height: 61px;
 
-		@include media (min, lg) {
-			width: 80px;
-		}
+		
 	}
 
 

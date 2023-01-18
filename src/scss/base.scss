@@ -3,19 +3,18 @@
 @import "base/forms/forms";
 
 // Стили попапов
-@import "base/popup";
+// @import "base/popup";
 
-// Стили спойлеров
-@import "base/spollers";
+
 
 // Стили табов
 // @import "base/tabs";
 
 // Стили карт
-@import "base/maps";
+// @import "base/maps";
 
 // Стили блока "показать еще"
-@import "base/showmore";
+// @import "base/showmore";
 
 
 // Стили для полноэкранного блока
@@ -144,12 +143,12 @@
 body {
 
 	margin: 0;
-	background: #E5E5E5;
-	color: #000;
+	
+	color: #030E27;
 }
 
 .container {
-	max-width: 1190px;
+	max-width: 1640px;
 	padding: 0 20px;
 	margin: 0 auto;
 

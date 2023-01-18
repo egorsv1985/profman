@@ -1,0 +1,40 @@
+.solutions {
+  position: relative;
+  top: -350px;
+  padding-top: 290px;
+  background: #f7f7f7;
+  border-radius: 80px 80px 0px 0px;
+
+  // .solutions__title
+  &__title {
+    font-size: 54px;
+    line-height: 54px;
+	margin-bottom: 40px;
+  }
+  // .solutions__wrapper
+  &__wrapper {
+    @include flex(space-between);
+    gap: 35px;
+  }
+  // .solutions__box
+  &__box {
+    @include flex(space-between, $flex-direction: column);
+    max-width: 380px;
+	padding-top: 20px;
+
+    gap: 20px;
+
+    border-top: 1px solid #030e27;
+  }
+  // .solutions__text
+  &__text {
+    font-family: "Bogart-Medium";
+    font-weight: 400;
+    line-height: 33px;
+	
+  }
+  // .solutions__img
+  &__img {
+    border-radius: 10px;
+  }
+}

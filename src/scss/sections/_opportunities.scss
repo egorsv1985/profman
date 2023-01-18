@@ -1,0 +1,242 @@
+.opportunities {
+  position: relative;
+  top: -350px;
+  padding-top: 85px;
+
+  // .opportunities__wrapper
+  &__wrapper {
+    @include flex();
+	gap: 40px;
+  }
+  // .opportunities__content
+  &__content {
+    @include flex($flex-direction: column);
+	
+
+    padding-right: 100px;
+
+    border-right: 1px solid #030e27;
+  }
+  // .opportunities__title
+  &__title {
+    font-size: 54px;
+    line-height: 54px;
+    margin-bottom: 50px;
+  }
+  // .opportunities__buttons
+  &__buttons {
+    margin-bottom: 150px;
+    @include flex();
+    gap: 40px;
+  }
+  // .opportunities__btn
+  &__btn {
+    width: 205px;
+  }
+  // .opportunities__spollers-box
+  &__spollers-box {
+  }
+  // .opportunities__spollers
+  &__spollers {
+  }
+  .swiper-button-next,
+  .swiper-button-prev {
+    @include wh(50px);
+    position: relative;
+
+    border: 1px solid #030e27;
+
+    border-radius: 50%;
+    &:hover {
+      background-color: #030e27;
+      svg path {
+        stroke: #fff;
+      }
+    }
+
+    &::after {
+      @include pseudo;
+      @include wh(16px);
+      @include background(url(../img/icons/arrow-left.svg));
+      @include pos(absolute, $top: 50%, $left: 50%);
+      transform: translate(-50%, -50%);
+    }
+  }
+
+  .swiper-button-prev {
+    &::after {
+      @include background(url(../img/icons/arrow-right.svg));
+    }
+  }
+
+  .swiper-button-disabled {
+    &::after {
+    }
+  }
+
+  .swiper-button-prev.swiper-button-disabled {
+    &::after {
+      @include background(url(../img/icons/arrow-right.svg));
+    }
+  }
+
+  .swiper-button-next.swiper-button-disabled {
+    &::after {
+      @include background(url(../img/icons/arrow-left.svg));
+    }
+  }
+  .spollers {
+    // .spollers__item
+    &__item {
+    }
+
+    // Заголовок спойлера
+    // .spollers__title
+    &__title {
+      width: 100%;
+      position: relative;
+
+      padding: 10px 0 10px 20px;
+
+      border-radius: 40px;
+      margin-bottom: 2px;
+
+      ._spoller-init & {
+        cursor: pointer;
+
+        &::before,
+        &::after {
+          content: "\e905";
+          display: block;
+          @include pos(absolute, $top: 50%, $right: 17px);
+          @include wh(16px);
+
+          background-color: #030e27;
+
+          transition: transform 0.5s ease 0s;
+        }
+
+        &::before {
+          transform: translate(-75%, -50%) rotate(40deg);
+        }
+
+        &::after {
+          transform: translate(0, -50%) rotate(-40deg);
+        }
+
+        &._spoller-active {
+          &::before {
+            transform: translateX(-75%) rotate(-40deg);
+          }
+
+          &::after {
+            transform: rotate(40deg);
+          }
+        }
+      }
+    }
+
+    &__title {
+      cursor: pointer;
+
+      &::before {
+        transition: all 0.3s ease 0s;
+        font-size: rem(19);
+        color: #141414;
+      }
+
+      &._spoller-active {
+        &::before {
+          transform: rotate(135deg);
+        }
+      }
+    }
+
+    // Контент спойлера
+    // .spollers__body
+    &__body {
+      margin-bottom: 2px;
+
+      position: relative;
+      padding: 10px 20px 16px;
+
+      @include media(min, lg) {
+        padding: 20px 95px 16px 60px;
+      }
+
+      &::before {
+        @include pseudo;
+        @include wh(100%, 200%);
+        background-color: #fff;
+        @include pos(absolute, $top: 50%, $left: 50%);
+        transform: translate(-50%, -50%);
+        z-index: -1;
+        border-radius: 20px;
+      }
+    }
+
+    // .spollers__box
+    &__box {
+     
+     
+
+      // .spollers__text
+      &__text {
+      
+font-size: 18px;
+line-height: 26px;
+
+color: #030E27;
+
+
+      }
+    }
+  }
+}
+
+.btn {
+}
+.btn-primary {
+}
+.swiper {
+  // .swiper__item
+  &__item {
+  }
+}
+.opportunitiesSwiper {
+}
+.swiper-wrapper {
+}
+.swiper-slide {
+}
+.spollers {
+  // .spollers__item
+  &__item {
+  }
+  // .spollers__title
+  &__title {
+    font-family: "Bogart-Medium";
+
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 36px;
+  }
+  // .spollers__body
+  &__body {
+  }
+  // .spollers__box
+  &__box {
+  }
+  // .spollers__text
+  &__text {
+  }
+  // .spollers__box-img
+  &__box-img {
+  }
+  // .spollers__img
+  &__img {
+    border-radius: 10px;
+    width: 344px;
+    height: 247px;
+  }
+}

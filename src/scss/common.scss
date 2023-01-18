@@ -1,71 +1,25 @@
 // Заголовки, общие БЄМ блоки и проче...
 
 .title {
-	font-family: 'OnestMedium';
+  font-family: "Bogart-Medium";
 
-	font-weight: 500;
-	font-size: 20px;
-	line-height: 120%;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 57px;
 
-	text-align: center;
-
-	color: #0F2F2E;
-
-	@include media (min, lg) {
-		font-size: 40px;
-		line-height: 120%;
-	}
-	&--green {
-
-
-		color: #53CD8B;
-		
-
-
-	}
-
-
-}
-
-.subtitle {
-	font-family: 'OnestRegular';
-	font-size: 8px;
-	line-height: 150%;
-	color: #707777;
-
-	@include media (min, lg) {
-		font-size: 16px;
-	}
-
-
-}
-
-.title--color {
-	color: #53CD8B;
+  color: #030e27;
 }
 
 .text {
-	font-family: 'OnestRegular';
-	font-size: 12px;
-	line-height: 150%;
-	text-align: center;
+  font-family: "cantarell";
+  font-weight: 500;
+  font-size: 28px;
+  line-height: 40px;
 
-	color: #0F2F2E;
-
-	@include media (min, lg) {
-		font-size: 16px;
-	}
-
-	&--decoration {
-		text-decoration: underline;
-	}
-
-	&--green {
-
-
-		color: #53CD8B;
-		margin-bottom: 30px;
-
-
-	}
+  color: #030e27;
+  &--small {
+    font-size: 16px;
+    line-height: 23px;
+	color: #000;
+  }
 }
