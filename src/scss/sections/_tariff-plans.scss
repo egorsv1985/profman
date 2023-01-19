@@ -1,0 +1,130 @@
+.tariff-plans {
+  position: relative;
+  top: -425px;
+  padding: 70px 0 45px;
+
+  background-color: #cfe1bd;
+  border-radius: 80px 80px 0px 0px;
+
+  // .tariff-plans__wrapper
+  &__wrapper {
+	@include flex ($flex-direction: column);
+	gap: 40px;
+  }
+  // .tariff-plans__box
+  &__box {
+	
+  }
+  // .tariff-plans__content
+  &__content {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 110px;
+    column-gap: 40px;
+  }
+  // .tariff-plans__title
+  &__title {
+    font-size: 54px;
+    line-height: 54px;
+    grid-area: 1 / 1 / 4 / 2;
+    min-width: 520px;
+  }
+  // .tariff-plans__plans-box
+  &__plans-box {
+    @include flex($align-items: center);
+    gap: 40px;
+    max-width: 926px;
+
+    border-bottom: 2px solid #134238;
+    &--solo {
+      grid-area: 1 / 2 / 2 / 5;
+    }
+    &--mini {
+      grid-area: 2 / 2 / 3 / 5;
+    }
+    &--baz {
+      grid-area: 3 / 2 / 4 / 5;
+    }
+  }
+  // .tariff-plans__subtitle
+  &__subtitle {
+    font-family: "Bogart-Bold";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 62px;
+    line-height: 68px;
+    width: 380px;
+  }
+  // .tariff-plans__price
+  &__price {
+    font-family: "Cantarell-Bold";
+    font-size: 35px;
+    line-height: 50px;
+    width: 340px;
+  }
+  // .tariff-plans__btn
+  &__btn {
+    width: 120px;
+    height: 43px;
+
+    &--long {
+      width: 230px;
+      height: 46px;
+	  margin-top: 30px;
+    }
+  }
+  &__include{
+	position: relative;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+  }
+  // .tariff-plans__list
+  &__list {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+	row-gap: 30px;
+    column-gap: 40px;
+
+  }
+  // .tariff-plans__item
+  &__item {
+ @include flex($flex-direction: column);
+
+    padding: 20px 30px;
+
+    width: 450px;
+    height: 248px;
+
+    border: 2px solid #134238;
+    border-radius: 10px;
+
+   
+  }
+  // .tariff-plans__num
+  &__num {
+	font-family: "Cantarell-Bold";
+  font-size: 54px;
+  line-height: 78px;
+  color: #134238;
+}
+ &__rate{
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	@include flex ($flex-direction: column);
+ }
+
+  // .tariff-plans__text
+  &__text {
+    font-size: 28px;
+    line-height: 40px;
+  }
+  // .tariff-plans__span
+  &__span {
+    font-family: "Cantarell-Bold";
+    font-size: 28px;
+    line-height: 40px;
+  }
+}

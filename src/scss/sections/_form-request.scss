@@ -1,0 +1,95 @@
+.form-request {
+	position: relative;
+  top: -320px;
+  padding: 70px 0;
+  // .form-request__wrapper
+  &__wrapper {
+    @include flex();
+	gap: 140px;
+  }
+  // .form-request__content
+  &__content {
+    @include flex($flex-direction: column);
+  }
+  // .form-request__title
+  &__title {
+    font-size: 28px;
+    line-height: 32px;
+    margin-bottom: 30px;
+  }
+  // .form-request__text
+  &__text {
+    font-size: 18px;
+    line-height: 26px;
+    margin-bottom: 20px;
+  }
+  // .form-request__form
+  &__form {
+    display: grid;
+
+    grid-template-areas:
+      "name company"
+      "tel email"
+      "message message"
+      "button button";
+    gap: 40px;
+  }
+  .form {
+    // .form__box
+    &__box {
+    }
+    // .form__wrap
+    &__wrap {
+    }
+    // .form__wrap--name
+    &__wrap--name {
+      grid-area: name;
+    }
+    // .form__label
+    &__label {
+    }
+    // .form__input
+    &__input {
+      max-width: 380px;
+      min-width: 380px;
+    }
+    // .form__wrap--company
+    &__wrap--company {
+      grid-area: company;
+    }
+    // .form__wrap--tel
+    &__wrap--tel {
+      grid-area: tel;
+    }
+    // .form__wrap--email
+    &__wrap--email {
+      grid-area: email;
+    }
+    // .form__wrap--message
+    &__wrap--message {
+      grid-area: 3 / 1 / 4 / 3;
+    }
+    // .form__textarea
+    &__textarea {
+      width: 800px;
+      height: 170px;
+
+    
+
+opacity: 0.5;
+border: 1px solid #030E27;
+border-radius: 10px;
+
+      margin-bottom: 40px;
+    }
+    // .form__wrap--btn
+    &__wrap--btn {
+      grid-area: 4 / 1 / 5 / 3;
+    }
+    // .form__btn
+    &__btn {
+      width: 248px;
+      height: 43px;
+    }
+  }
+}

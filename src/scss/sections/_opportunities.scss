@@ -6,12 +6,11 @@
   // .opportunities__wrapper
   &__wrapper {
     @include flex();
-	gap: 40px;
+    gap: 40px;
   }
   // .opportunities__content
   &__content {
     @include flex($flex-direction: column);
-	
 
     padding-right: 100px;
 
@@ -38,6 +37,32 @@
   }
   // .opportunities__spollers
   &__spollers {
+  }
+  .swiper{
+     // .swiper__slide
+  &__item {
+    width: 380px;
+    height: 416px;
+
+    background-color: #f1f1f1;
+    border: 1px solid #030e27;
+    border-radius: 10px;
+
+    padding: 30px 18px 18px;
+
+    border-radius: 30px;
+  }
+
+  // .swiper__box-img
+  &__box-img {
+    width: 120px;
+    margin: 0 auto 20px;
+  }
+
+  // .swiper__img
+  &__img {
+    width: 100%;
+  }
   }
   .swiper-button-next,
   .swiper-button-prev {
@@ -143,12 +168,16 @@
         transition: all 0.3s ease 0s;
         font-size: rem(19);
         color: #141414;
+        position: absolute;
+        top: 0;
+        right: 0;
       }
 
       &._spoller-active {
         &::before {
           transform: rotate(135deg);
         }
+       
       }
     }
 
@@ -159,39 +188,24 @@
 
       position: relative;
       padding: 10px 20px 16px;
-
-      @include media(min, lg) {
-        padding: 20px 95px 16px 60px;
-      }
-
-      &::before {
-        @include pseudo;
-        @include wh(100%, 200%);
-        background-color: #fff;
-        @include pos(absolute, $top: 50%, $left: 50%);
-        transform: translate(-50%, -50%);
-        z-index: -1;
-        border-radius: 20px;
-      }
     }
 
     // .spollers__box
     &__box {
-     
-     
+    }
+    // .spollers__text
+    &__text {
+      font-weight: 500;
+      font-size: 18px;
+      line-height: 26px;
 
-      // .spollers__text
-      &__text {
-      
-font-size: 18px;
-line-height: 26px;
-
-color: #030E27;
-
-
-      }
+      color: #030e27;
     }
   }
+   // .spollers__box-img
+   ._spoller-active+.spollers__box-img {
+  display: none;
+}
 }
 
 .btn {
